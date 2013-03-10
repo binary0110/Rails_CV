@@ -1,4 +1,7 @@
 class CvSectionsController < ApplicationController
+
+  before_filter :get_cv
+
   # GET /cv_sections
   # GET /cv_sections.json
   def index
@@ -79,5 +82,9 @@ class CvSectionsController < ApplicationController
       format.html { redirect_to cv_sections_url }
       format.json { head :no_content }
     end
+  end
+
+  def get_cv
+    @cv = Cv.find(params[:cv_id])
   end
 end

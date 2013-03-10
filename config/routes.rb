@@ -1,7 +1,7 @@
 RailsCV::Application.routes.draw do
-  resources :cvs
-
-  resources :cv_sections
+  resources :cvs do
+    resources :sections, controller: "cv_sections"
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

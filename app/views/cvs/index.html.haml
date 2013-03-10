@@ -1,0 +1,23 @@
+%h1 Listing cvs
+
+%table
+  %tr
+    %th Title
+    %th Name
+    %th Address
+    %th
+    %th
+    %th
+
+  - @cvs.each do |cv|
+    %tr
+      %td= cv.title
+      %td= cv.name
+      %td= cv.address
+      %td= link_to 'Show', cv
+      %td= link_to 'Edit', edit_cv_path(cv)
+      %td= link_to 'Destroy', cv, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Cv', new_cv_path

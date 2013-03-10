@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @cv.title
+%p
+  %b Name:
+  = @cv.name
+%p
+  %b Address:
+  = @cv.address
+
+= link_to 'Edit', edit_cv_path(@cv)
+\|
+= link_to 'Back', cvs_path

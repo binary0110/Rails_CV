@@ -1,0 +1,19 @@
+= form_for @cv do |f|
+  - if @cv.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@cv.errors.count, "error")} prohibited this cv from being saved:"
+      %ul
+        - @cv.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :address
+    = f.text_area :address
+  .actions
+    = f.submit 'Save'

@@ -10,6 +10,15 @@
   %b Address:
   = @cv.address
 
+%h3 Sections
+
+-@cv.cv_sections.each do |section|
+  =section.title
+
+%p=link_to "Add Section", new_cv_section_path
+
+%h3 Options
+
 = link_to 'Edit', edit_cv_path(@cv)
 \|
 = link_to 'Back', cvs_path

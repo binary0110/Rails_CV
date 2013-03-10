@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @cv_section.title
+%p
+  %b Content:
+  = @cv_section.content
+
+= link_to 'Edit', edit_cv_section_path(@cv_section)
+\|
+= link_to 'Back', cv_sections_path

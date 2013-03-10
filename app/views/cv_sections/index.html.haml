@@ -1,0 +1,21 @@
+%h1 Listing CV Sections
+
+%table
+  %tr
+    %th Title
+    %th Content
+    %th
+    %th
+    %th
+
+  - @cv_sections.each do |cv_section|
+    %tr
+      %td= cv_section.title
+      %td= truncate cv_section.content, length: 140
+      %td= link_to 'Show', cv_section
+      %td= link_to 'Edit', edit_cv_section_path(cv_section)
+      %td= link_to 'Destroy', cv_section, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Cv section', new_cv_section_path

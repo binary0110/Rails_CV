@@ -43,11 +43,11 @@ class CvSectionsController < ApplicationController
   # POST /cv_sections
   # POST /cv_sections.json
   def create
-    @cv_section = CvSection.new(params[:cv_section])
+    @cv_section = @cv.cv_sections.build(params[:cv_section])
 
     respond_to do |format|
       if @cv_section.save
-        format.html { redirect_to @cv_section, notice: 'Cv section was successfully created.' }
+        format.html { redirect_to cv_section_path(@cv, @cv_section), notice: 'Cv section was successfully created.' }
         format.json { render json: @cv_section, status: :created, location: @cv_section }
       else
         format.html { render action: "new" }

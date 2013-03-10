@@ -1,6 +1,7 @@
-%h1 Editing cv_section
+%h1 Editing CV Section in #{@cv.title}.
 
-= render 'form'
+= form_for @cv_section, url: cv_sections_path(@cv) do |f|
+  = render 'form' f:f
 
 = link_to 'Show', @cv_section
 \|
